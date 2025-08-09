@@ -1,0 +1,199 @@
+/*index.html*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>desika s- Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1>desika s</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="section">
+    <h2>Welcome!</h2>
+    <p>I’m desika s, a passionate frontend developer creating responsive and interactive web applications.</p>
+  </section>
+
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I am currently an intern at CodeAlpha in the Frontend Development domain.  
+    I have hands-on experience in HTML, CSS, and JavaScript, and I enjoy building projects that combine clean design with great functionality.  
+    My internship runs from <b>10th July 2025</b> to <b>10th August 2025</b>, under the mentorship of Swati Srivastava.</p>
+  </section>
+
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Responsive Web Design</li>
+      <li>Git & GitHub</li>
+      <li>UI/UX Basics</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+
+    <div class="project-card">
+      <h3>Image Gallery 🖼️</h3>
+      <p>Designed and developed an interactive image gallery with a responsive grid, hover effects, and a modal preview with navigation.</p>
+      
+    </div>
+
+    <div class="project-card">
+      <h3>Calculator 🧮</h3>
+      <p>Built a colorful and interactive calculator with HTML, CSS, and JavaScript, featuring basic arithmetic operations and responsive design.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:desikasekar65@gmail.com">desikasekar65@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/desika-s-5b116527" target="_blank">linkedin.com/in/harini-k-5b1438291</a></p>
+  </section>
+
+  <footer>
+    <p>desika s</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+/*style.css*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+header {
+  background-color: #0b0e17;
+  color: paleturquoise;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+nav a {
+  color: rgb(151, 209, 250);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #60a5fa;
+}
+
+.section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.skills-list li {
+  background: #a4a5a5;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.project-card {
+  background: rgb(184, 181, 184);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 400px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #658ce0;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background: #111827;
+  color: rgb(130, 127, 127);
+  text-align: center;
+  padding: 15px;
+}
+
+
+/*script.js*/
+
+
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+sections.forEach(section => {
+  section.style.opacity = 0;
+  section.style.transform = 'translateY(30px)';
+  section.style.transition = 'all 0.6s ease-out';
+  observer.observe(section);
+});
+
+
+
+
+v
